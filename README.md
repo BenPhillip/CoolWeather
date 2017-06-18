@@ -30,3 +30,7 @@
 		//为状态栏留出空间
 		 android:fitsSystemWindows="true" 
 		```
+4. 切换更新天气
+	* 添加了swipeRefreshLayout和DrawerLayout
+5. 后台自动更新天气
+	*  创建一个Service设置定时器。定时开启服务更新天气。

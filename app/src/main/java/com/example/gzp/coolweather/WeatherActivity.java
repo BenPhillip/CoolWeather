@@ -1,5 +1,6 @@
 package com.example.gzp.coolweather;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
@@ -33,7 +34,7 @@ import okhttp3.Response;
 public class WeatherActivity extends AppCompatActivity {
     public static final String WEATHER = "weather";
     public static final String WEATHER_ID = "weather_id";
-    private static final String BING_PIC = "bing_pic";
+    public static final String BING_PIC = "bing_pic";
 
     public SwipeRefreshLayout mSwipeRefreshLayout;
     public DrawerLayout mDrawerLayout;
@@ -168,6 +169,8 @@ public class WeatherActivity extends AppCompatActivity {
         carWashText.setText(carWash);
         sportText.setText(sport);
         weatherLayout.setVisibility(View.VISIBLE);
+        Intent intent = new Intent(this, AutoUpdateService.class);
+        startService(intent);
     }
 
     private void loadBingPic() {
